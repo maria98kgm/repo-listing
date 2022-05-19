@@ -1,0 +1,38 @@
+body {
+  margin: 0px;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+.page-container {
+  height: 85%;
+}
+
+header {
+  background-color: #0064EB;
+  display: flex;
+  align-items: center;
+  padding: 16px;
+}
+
+header img {
+  margin-right: 22px;
+}
+
+header input {
+  height: 30px;
+  width: 500px;
+  border-radius: 6px;
+  font-size: 14px;
+  background: url('./image1.png') no-repeat scroll 13px 9px;
+  background-color: aliceblue;
+  padding-left: 44px;
+  border: none;
+  outline:none;
+}
+
+header input:focus {
+  border: 2px solid rgb(224, 4, 224);
+}
