@@ -1,0 +1,22 @@
+.repoName {
+  font-weight: 500;
+  font-size: 24px;
+  color: #0064EB;
+}
+
+.pagination {
+  list-style: none;
+  display: flex;
+}
+
+.pagination li {
+  color: #808080;
+  font-weight: 500;
+  padding: 3px 6px;
+  border-radius: 10%;
+}
+
+.pagination li:hover {
+  background-color: #0064EB;
+  cursor: pointer;
+}

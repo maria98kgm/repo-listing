@@ -1,0 +1,56 @@
+.profile-container {
+  padding: 0.8% 2.2%;
+  display: flex;
+}
+
+.img-name {
+  margin: 27px;
+  width: 350px;
+}
+
+.photo {
+  border-radius: 50%;
+  height: 280px;
+}
+
+a {
+  color: #0064EB;
+  text-decoration: none;
+}
+
+.img-name p {
+  font-size: 18px;
+}
+
+.names {
+  margin: 7% 0%;
+}
+
+.followers {
+  display: flex;
+  align-items: center;
+  column-gap: 7%;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.twoMan {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: 6%;
+}
+
+.oneMan {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: 6%;
+}
+
+.followers p {
+  width: 100%;
+  font-weight: 400;
+  font-size: 16px;
+  margin: 0px;
+}
