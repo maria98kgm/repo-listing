@@ -77,7 +77,7 @@
   }
 }
 
-@media (max-width: 620px) {
+@media (max-width: 700px) {
   .profile-container {
     flex-direction: column;
   }
