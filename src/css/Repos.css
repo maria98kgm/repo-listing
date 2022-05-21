@@ -79,8 +79,17 @@ h1 {
 }
 
 @media (max-width: 700px) {
+  .listOfRepos {
+    row-gap: 5vw;
+  }
+
   .repo {
     padding-left: 20px;
+  }
+
+  .repo a {
+    font-size: 20px;
+    margin-bottom: 8%;
   }
 
   .pagination {
