@@ -1,22 +1,130 @@
+/* .repos-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.listOfRepos {
+  padding-left: 30px;
+  padding-top: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .repoName {
+  font-weight: 500;
+  font-size: 24px;
+  color: #0064EB;
+  margin-bottom: 0px;
+}
+
+.pagination ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 2%;
+  column-gap: 0.5%;
+}
+
+.pagination a {
+  height: 25px;
+  width: 21px;
+  color: #808080;
+  font-weight: 500;
+  font-size: 14px;
+  border-radius: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination a:hover {
+  color: #0064EB;
+  background-color: rgb(219, 238, 255);
+  cursor: pointer;
+}
+
+.selected a {
+  background-color: #0064EB;
+  color: #ffffff;
+  border-radius: 10%;
+}
+
+.selected a:hover {
+  background-color: #0049a8;
+  color: #ffffff;
+} */
+
+h1 {
+  margin: 0px;
+}
+
+.listOfRepos {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2.5vw;
+}
+
+.repo {
+  height: 112px;
+  background-color: #ffffff;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 40px;
+  row-gap: 20%;
+}
+
+.repo p {
+  margin: 0px;
+}
+
+.repo a {
+  text-decoration: none;
   font-weight: 500;
   font-size: 24px;
   color: #0064EB;
 }
 
-.pagination {
-  list-style: none;
-  display: flex;
+.repo a:visited {
+  color: #0047a5;
 }
 
-.pagination li {
+.pagination ul {
+  display: flex;
+  list-style: none;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: 0.5%;
+}
+
+.pagination a {
+  height: 25px;
+  width: 21px;
   color: #808080;
   font-weight: 500;
-  padding: 3px 6px;
+  font-size: 14px;
+  border-radius: 10%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination a:hover {
+  color: #0064EB;
+  background-color: rgb(219, 238, 255);
+  cursor: pointer;
+}
+
+.selected a {
+  background-color: #0064EB;
+  color: #ffffff;
   border-radius: 10%;
 }
 
-.pagination li:hover {
-  background-color: #0064EB;
-  cursor: pointer;
+.selected a:hover {
+  background-color: #0049a8;
+  color: #ffffff;
 }

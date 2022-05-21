@@ -1,56 +1,66 @@
 .profile-container {
-  padding: 0.8% 2.2%;
+  height: 100%;
   display: flex;
+  box-sizing: border-box;
+  padding: 3% 5%;
 }
 
-.img-name {
-  margin: 27px;
-  width: 350px;
+.picture-and-name {
+  width: 30%;
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
 }
 
 .photo {
-  border-radius: 50%;
-  height: 280px;
+  width: 100%;
 }
 
-a {
+.photo img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.names {
+  margin-top: 12%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 20px;
+}
+
+.names h2, .names p {
+  margin: 0px;
+}
+
+.names a {
   color: #0064EB;
   text-decoration: none;
 }
 
-.img-name p {
-  font-size: 18px;
-}
-
-.names {
-  margin: 7% 0%;
-}
-
-.followers {
+.fans {
+  min-height: 60px;
+  margin-top: 1vw;
   display: flex;
-  align-items: center;
-  column-gap: 7%;
   justify-content: space-between;
-  width: 100%;
 }
 
-.twoMan {
-  width: 100%;
+.followers, .following {
+  width: 50%;
   display: flex;
   align-items: center;
-  column-gap: 6%;
+  column-gap: 5%;
 }
 
-.oneMan {
+.repos {
   width: 100%;
-  display: flex;
-  align-items: center;
-  column-gap: 6%;
+  padding-left: 100px;
+  padding-left: 8%;
+  box-sizing: border-box;
 }
 
-.followers p {
-  width: 100%;
-  font-weight: 400;
-  font-size: 16px;
-  margin: 0px;
+@media (max-width: 600px) {
+  .profile-container {
+    flex-direction: column;
+  }
 }

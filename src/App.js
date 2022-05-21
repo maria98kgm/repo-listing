@@ -1,6 +1,6 @@
 import './assets/App.css';
 import { useState } from 'react';
-import InitialState from './InitialState';
+import StartScreen from './StartScreen';
 import NotFound from './NotFound'
 import Profile from './Profile';
 
@@ -35,12 +35,14 @@ function App() {
   return (
     <div className='page-container'>
       <header>
-        <img src={require('./assets/logo.png')} alt="vector" />
+        <img src={require('./assets/gh-logo.png')} alt="vector" />
         <form onSubmit={handleSubmit}>
           <input type="text" value={name} onChange={inp => setName(inp.target.value)} />
         </form>
       </header>
-      {search === '' ? <InitialState /> : search === 'notFound' ? <NotFound /> : <Profile profData={search} repos={repos} />}
+      <div className='info-container'>
+        {search === '' ? <StartScreen /> : search === 'notFound' ? <NotFound /> : <Profile profData={search} repos={repos} />}
+      </div>
     </div>
   );
 }

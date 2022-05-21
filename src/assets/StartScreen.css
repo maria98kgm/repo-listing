@@ -1,5 +1,5 @@
-.is-container {
-  height: 90%;
+.startScreen-container {
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,9 +8,8 @@
   row-gap: 10px;
 }
 
-.is-container p {
+.startScreen-container p {
   color: #808080;
-  font-family: 'Inter', sans-serif;
   font-size: 22px;
   text-align: center;
 }

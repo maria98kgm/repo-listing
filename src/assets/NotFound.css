@@ -1,5 +1,5 @@
-.nf-container {
-  height: 90%;
+.notFound-container {
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,7 +8,7 @@
   row-gap: 10px;
 }
 
-.nf-container p {
+.notFound-container p {
   color: #808080;
   font-size: 22px;
 }
