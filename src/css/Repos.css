@@ -90,4 +90,9 @@ h1 {
   .pagination {
     margin-top: 4%;
   }
+
+  .pagination ul {
+    justify-content: center;
+    padding-left: 0%;
+  }
 }

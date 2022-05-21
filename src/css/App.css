@@ -26,7 +26,7 @@ header input {
   width: 35vw;
   border: none;
   border-radius: 6px;
-  background: url('./small-loupe.png') no-repeat scroll 13px 11px;
+  background: url('../images/small-loupe.png') no-repeat scroll 13px 11px;
   background-color: aliceblue;
   padding-left: 39px;
   outline: none;

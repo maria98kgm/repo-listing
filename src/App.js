@@ -1,4 +1,4 @@
-import './assets/App.css';
+import './css/App.css';
 import { useState } from 'react';
 import StartScreen from './StartScreen';
 import NotFound from './NotFound'
@@ -18,7 +18,7 @@ function App() {
     async function searchUsers() {
       try {
         const octokit = new Octokit({
-          auth: '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',
+          auth: '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',
           acceptstring: 'application/vnd.github.v3+json'
         })
         const response = await octokit.request(`GET /users/${name}`, {
@@ -39,7 +39,7 @@ function App() {
     async function searchRepos() {
       try {
         const octokit = new Octokit({
-          auth: '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',
+          auth: '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',
           acceptstring: 'application/vnd.github.v3+json'
         })
         const response = await octokit.request(`GET /users/${name}/repos`, {
@@ -49,7 +49,7 @@ function App() {
       } 
       catch(e) {
         setRepos([]);
-        console.error('no repos');
+        console.error('no such a user');
       }
     }
 
@@ -59,7 +59,7 @@ function App() {
   return (
     <div className='page-container'>
       <header>
-        <img src={require('./assets/gh-logo.png')} alt="vector" />
+        <img src={require('./images/gh-logo.png')} alt="vector" />
         <form onSubmit={handleSubmit}>
           <input type="text" value={name} onChange={inp => setName(inp.target.value)} />
         </form>

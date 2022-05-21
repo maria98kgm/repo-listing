@@ -1,21 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import './assets/Repos.css';
+import './css/Repos.css';
 import ReactPaginate from 'react-paginate';
 import NoRepos from './NoRepos';
 
-function Items({ currentItems, reposLength }) {
+const Repos = ({ repos }) => {
   return (
-    <div className='listOfRepos'>
-      <h1>Repositories ({reposLength})</h1>
-      {currentItems &&
-        currentItems.map((item) => (
-          <div key={item.id} className='repo'>
-            <a href={item.html_url}><p className='repoName'>{item.name}</p></a>
-            <p className='repoDescrip'>{item.description ? item.description : <i>No description provided</i>}</p>
-          </div>
-      ))}
-    </div>
-  );
+    <>
+      {repos.length !== 0 ? <PaginatedItems repos={repos} itemsPerPage={4} /> : <NoRepos />}
+    </>
+  )
 }
 
 function PaginatedItems({ repos, itemsPerPage }) {
@@ -52,12 +45,19 @@ function PaginatedItems({ repos, itemsPerPage }) {
   );
 }
 
-const Repos = ({ repos }) => {
+function Items({ currentItems, reposLength }) {
   return (
-    <>
-      {repos.length !== 0 ? <PaginatedItems repos={repos} itemsPerPage={4} /> : <NoRepos />}
-    </>
-  )
+    <div className='listOfRepos'>
+      <h1>Repositories ({reposLength})</h1>
+      {currentItems &&
+        currentItems.map((item) => (
+          <div key={item.id} className='repo'>
+            <a href={item.html_url} target='_blank' rel="noreferrer"><p className='repoName'>{item.name}</p></a>
+            <p className='repoDescrip'>{item.description ? item.description : <i>No description provided</i>}</p>
+          </div>
+      ))}
+    </div>
+  );
 }
 
 export default Repos;
