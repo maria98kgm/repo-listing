@@ -6,8 +6,8 @@
 }
 
 .picture-and-name {
-  width: 30%;
-  min-width: 240px;
+  width: 35%;
+  min-width: 290px;
   display: flex;
   flex-direction: column;
 }
@@ -33,6 +33,14 @@
   margin: 0px;
 }
 
+.names p {
+  font-size: 16px;
+}
+
+.names h2 {
+  font-size: 26px;
+}
+
 .names a {
   color: #0064EB;
   text-decoration: none;
@@ -42,7 +50,7 @@
   min-height: 60px;
   margin-top: 1vw;
   display: flex;
-  justify-content: space-between;
+  column-gap: 5%;
 }
 
 .followers, .following {
@@ -59,8 +67,22 @@
   box-sizing: border-box;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
+  .photo {
+    width: 85%;
+  }
+
+  .repos {
+    padding-left: 1%;
+  }
+}
+
+@media (max-width: 620px) {
   .profile-container {
     flex-direction: column;
+  }
+
+  .repos {
+    margin-top: 4%;
   }
 }

@@ -3,16 +3,15 @@ import './assets/Repos.css';
 import ReactPaginate from 'react-paginate';
 import NoRepos from './NoRepos';
 
-function Items({ currentItems }) {
-  console.log(currentItems)
+function Items({ currentItems, reposLength }) {
   return (
     <div className='listOfRepos'>
-      <h1>Repositories ({currentItems.length})</h1>
+      <h1>Repositories ({reposLength})</h1>
       {currentItems &&
         currentItems.map((item) => (
           <div key={item.id} className='repo'>
             <a href={item.html_url}><p className='repoName'>{item.name}</p></a>
-            <p className='repoDescrip'>{item.description}</p>
+            <p className='repoDescrip'>{item.description ? item.description : <i>No description provided</i>}</p>
           </div>
       ))}
     </div>
@@ -25,7 +24,6 @@ function PaginatedItems({ repos, itemsPerPage }) {
   const [itemOffset, setItemOffset] = useState(0);
 
   useEffect(() => {
-    console.log(repos)
     const endOffset = itemOffset + itemsPerPage;
     setCurrentRepos(repos.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(repos.length / itemsPerPage));
@@ -37,8 +35,8 @@ function PaginatedItems({ repos, itemsPerPage }) {
   };
 
   return (
-    <>
-      <Items currentItems={currentRepos} />
+    <div className='repos-and-pag'>
+      {currentRepos !== null ? <Items currentItems={currentRepos} reposLength={repos.length} /> : null}
       <div className='pagination'>
         <ReactPaginate
           breakLabel="..."
@@ -50,7 +48,7 @@ function PaginatedItems({ repos, itemsPerPage }) {
           renderOnZeroPageCount={null}
         />
       </div>
-    </>
+    </div>
   );
 }
 
@@ -62,4 +60,4 @@ const Repos = ({ repos }) => {
   )
 }
 
-export default Repos
+export default Repos;

@@ -3,6 +3,17 @@ import './assets/Profile.css';
 import Repos from './Repos';
 
 const Profile = ({ profData, repos }) => {
+  const addPrefix = (num) => {
+    if (num >= 1000) {
+      let check_hundr = num - (Math.floor(num / 1000) * 1000);
+      if (check_hundr >= 100) {
+        let hundreds = Math.floor(check_hundr / 100);
+        return `${Math.floor(num / 1000)}.${hundreds}k`;
+      }
+      else return `${Math.floor(num / 1000)}k`;
+    }
+    return num;
+  }
   return (
     <div className='profile-container'>
       <div className='picture-and-name'>
@@ -11,16 +22,16 @@ const Profile = ({ profData, repos }) => {
         </div>
         <div className='names'>
           <h2>{profData.name}</h2>
-          <a href={profData.html_url}><p className='login'>{profData.login}</p></a>
+          <a href={profData.html_url} target="_blank"><p className='login'>{profData.login}</p></a>
         </div>
         <div className='fans'>
           <div className='followers'>
             <img src={require('./assets/followers.png')} alt="followers" />
-            <p>{profData.followers} followers</p>
+            <p>{addPrefix(profData.followers)} followers</p>
           </div>
           <div className='following'>
             <img src={require('./assets/following.png')} alt="following" />
-            <p>{profData.following} following</p>
+            <p>{addPrefix(profData.following)} following</p>
           </div>
         </div>
       </div>

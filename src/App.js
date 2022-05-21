@@ -3,33 +3,57 @@ import { useState } from 'react';
 import StartScreen from './StartScreen';
 import NotFound from './NotFound'
 import Profile from './Profile';
+import { Octokit } from "@octokit/core";
 
 function App() {
   const [name, setName] = useState('');
-  const [search, setSearch] = useState('');
+  const [users, setUsers] = useState('');
   const [repos, setRepos] = useState('');
+  const [loading, setLoading] = useState(false);
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch(`https://api.github.com/users/${name}`)
-      .then((response) => {
-        if (response.ok) return response.json();
-        else throw new Error();
-      })
-      .then(response => {
-        setSearch(response);
-        fetch(`${response.repos_url}`)
-          .then((response) => {
-            if (response.ok) return response.json();
-            else throw new Error();
-          })
-          .then(response => setRepos(response))
-          .catch(err => {
-            console.error(err)
-          });
-      })
-      .catch(() => {
-        setSearch('notFound');
-      });
+    setLoading(true);
+
+    async function searchUsers() {
+      try {
+        const octokit = new Octokit({
+          auth: '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',
+          acceptstring: 'application/vnd.github.v3+json'
+        })
+        const response = await octokit.request(`GET /users/${name}`, {
+          username: 'USERNAME'
+        });
+
+        setUsers(response.data);
+        setLoading(false);
+        searchRepos();
+      } 
+      catch(e) {
+        setLoading(false);
+        setUsers('notFound');
+        console.error('no such a user');
+      }
+    }
+
+    async function searchRepos() {
+      try {
+        const octokit = new Octokit({
+          auth: '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',
+          acceptstring: 'application/vnd.github.v3+json'
+        })
+        const response = await octokit.request(`GET /users/${name}/repos`, {
+          username: 'USERNAME'
+        });
+        setRepos(response.data);
+      } 
+      catch(e) {
+        setRepos([]);
+        console.error('no repos');
+      }
+    }
+
+    searchUsers()
   }
 
   return (
@@ -41,7 +65,7 @@ function App() {
         </form>
       </header>
       <div className='info-container'>
-        {search === '' ? <StartScreen /> : search === 'notFound' ? <NotFound /> : <Profile profData={search} repos={repos} />}
+        {users === '' ? <StartScreen /> : loading ?  <div className='for-loader'><div className="loader"></div></div>  : users === 'notFound' ? <NotFound /> : <Profile profData={users} repos={repos} />}
       </div>
     </div>
   );

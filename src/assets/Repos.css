@@ -1,60 +1,9 @@
-/* .repos-content {
-  display: flex;
-  flex-direction: column;
-}
-
-.listOfRepos {
-  padding-left: 30px;
-  padding-top: 8px;
+.repos-and-pag {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
-
-.repoName {
-  font-weight: 500;
-  font-size: 24px;
-  color: #0064EB;
-  margin-bottom: 0px;
-}
-
-.pagination ul {
-  list-style: none;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  padding-right: 2%;
-  column-gap: 0.5%;
-}
-
-.pagination a {
-  height: 25px;
-  width: 21px;
-  color: #808080;
-  font-weight: 500;
-  font-size: 14px;
-  border-radius: 10%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.pagination a:hover {
-  color: #0064EB;
-  background-color: rgb(219, 238, 255);
-  cursor: pointer;
-}
-
-.selected a {
-  background-color: #0064EB;
-  color: #ffffff;
-  border-radius: 10%;
-}
-
-.selected a:hover {
-  background-color: #0049a8;
-  color: #ffffff;
-} */
 
 h1 {
   margin: 0px;
@@ -97,7 +46,7 @@ h1 {
   list-style: none;
   justify-content: flex-end;
   align-items: center;
-  column-gap: 0.5%;
+  column-gap: 1%;
 }
 
 .pagination a {
@@ -127,4 +76,18 @@ h1 {
 .selected a:hover {
   background-color: #0049a8;
   color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .profile-container {
+    flex-direction: column;
+  }
+
+  .repo {
+    padding-left: 20px;
+  }
+
+  .pagination {
+    margin-top: 4%;
+  }
 }
