@@ -35,7 +35,7 @@ function PaginatedItems({ repos, itemsPerPage }) {
           breakLabel="..."
           nextLabel="❯"
           onPageChange={handlePageClick}
-          pageRangeDisplayed={2}
+          pageRangeDisplayed={3}
           pageCount={pageCount}
           previousLabel="❮"
           renderOnZeroPageCount={null}

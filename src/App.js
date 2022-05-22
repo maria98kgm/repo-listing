@@ -3,47 +3,41 @@ import { useState } from 'react';
 import StartScreen from './components/StartScreen';
 import NotFound from './components/NotFound'
 import Profile from './components/Profile';
-import { Octokit } from "@octokit/core";
 
 function App() {
   const [name, setName] = useState('');
   const [users, setUsers] = useState('');
-  const [repos, setRepos] = useState('');
+  const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     setLoading(true);
 
-    async function searchUsers() {
-      try {
-        const octokit = new Octokit();
-        const response = await octokit.request(`GET /users/${name}`);
+    fetch(`https://api.github.com/users/${name}`)
+    .then(users_responce => {
+      if (users_responce.ok) return users_responce.json();
+    })
+    .then(json_users => {
+      setUsers(json_users);
+      setLoading(false);
 
-        setUsers(response.data);
-        setLoading(false);
-        searchRepos();
-      }
-      catch(e) {
-        setLoading(false);
-        setUsers('notFound');
-        console.error('no such a user');
-      }
-    }
-
-    async function searchRepos() {
-      try {
-        const octokit = new Octokit();
-        const response = await octokit.request(`GET /users/${name}/repos`);
-        setRepos(response.data);
-      } 
-      catch(e) {
-        setRepos([]);
-        console.error('no such a user');
-      }
-    }
-
-    searchUsers()
+      fetch(`https://api.github.com/users/${name}/repos?per_page=100`)
+      .then(repos_response => {
+        if (repos_response.ok) return repos_response.json();
+      })
+      .then(json_repos => {
+        setRepos(json_repos);
+      })
+      .catch(() => {
+        console.error('No Repos Found');
+      });
+    })
+    .catch(() => {
+      setLoading(false);
+      setUsers('notFound');
+      console.error('No Such User')
+    });
   }
 
   return (
