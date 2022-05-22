@@ -17,18 +17,13 @@ function App() {
 
     async function searchUsers() {
       try {
-        const octokit = new Octokit({
-          auth: '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',
-          acceptstring: 'application/vnd.github.v3+json'
-        })
-        const response = await octokit.request(`GET /users/${name}`, {
-          username: 'maria98kgm'
-        });
+        const octokit = new Octokit();
+        const response = await octokit.request(`GET /users/${name}`);
 
         setUsers(response.data);
         setLoading(false);
         searchRepos();
-      } 
+      }
       catch(e) {
         setLoading(false);
         setUsers('notFound');
@@ -38,13 +33,8 @@ function App() {
 
     async function searchRepos() {
       try {
-        const octokit = new Octokit({
-          auth: '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',
-          acceptstring: 'application/vnd.github.v3+json',
-        })
-        const response = await octokit.request(`GET /users/${name}/repos`, {
-          username: 'maria98kgm'
-        });
+        const octokit = new Octokit();
+        const response = await octokit.request(`GET /users/${name}/repos`);
         setRepos(response.data);
       } 
       catch(e) {
