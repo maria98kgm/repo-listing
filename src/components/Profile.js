@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/Profile.css';
+import '../css/Profile.css';
 import Repos from './Repos';
 
 const Profile = ({ profData, repos }) => {
@@ -26,11 +26,11 @@ const Profile = ({ profData, repos }) => {
         </div>
         <div className='fans'>
           <div className='followers'>
-            <img src={require('./images/followers.png')} alt="followers" />
+            <img src={require('../images/followers.png')} alt="followers" />
             <p>{addPrefix(profData.followers)} followers</p>
           </div>
           <div className='following'>
-            <img src={require('./images/following.png')} alt="following" />
+            <img src={require('../images/following.png')} alt="following" />
             <p>{addPrefix(profData.following)} following</p>
           </div>
         </div>

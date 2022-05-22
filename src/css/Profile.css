@@ -1,7 +1,5 @@
 .profile-container {
-  height: 100%;
   display: flex;
-  box-sizing: border-box;
   padding: 3% 5%;
 }
 

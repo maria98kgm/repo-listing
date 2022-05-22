@@ -1,8 +1,8 @@
 import './css/App.css';
 import { useState } from 'react';
-import StartScreen from './StartScreen';
-import NotFound from './NotFound'
-import Profile from './Profile';
+import StartScreen from './components/StartScreen';
+import NotFound from './components/NotFound'
+import Profile from './components/Profile';
 import { Octokit } from "@octokit/core";
 
 function App() {
@@ -55,7 +55,11 @@ function App() {
         </form>
       </header>
       <div className='info-container'>
-        {users === '' ? <StartScreen /> : loading ?  <div className='for-loader'><div className="loader"></div></div>  : users === 'notFound' ? <NotFound /> : <Profile profData={users} repos={repos} />}
+        { loading ?  <div className='for-loader'><div className="loader"></div></div>  
+          : users === '' ? <StartScreen /> 
+          : users === 'notFound' ? <NotFound /> 
+          : <Profile profData={users} repos={repos} /> 
+        }
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './css/Repos.css';
+import '../css/Repos.css';
 import ReactPaginate from 'react-paginate';
 import NoRepos from './NoRepos';
 
