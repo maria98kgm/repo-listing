@@ -1,3 +1,11 @@
+# Repo listing App
+
+Deploy: https://dashing-trifle-b96f08.netlify.app/
+
+Repo: https://github.com/maria98kgm/repo-listing/tree/github-repos-listing
+
+Mobile version: `width <= 700px`
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
