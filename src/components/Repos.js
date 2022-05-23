@@ -25,6 +25,7 @@ function PaginatedItems({ repos, itemsPerPage }) {
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % repos.length;
     setItemOffset(newOffset);
+    window.scrollTo(0, 0);
   };
 
   return (
@@ -36,6 +37,7 @@ function PaginatedItems({ repos, itemsPerPage }) {
           nextLabel="❯"
           onPageChange={handlePageClick}
           pageRangeDisplayed={3}
+          marginPagesDisplayed={1}
           pageCount={pageCount}
           previousLabel="❮"
           renderOnZeroPageCount={null}

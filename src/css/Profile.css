@@ -65,22 +65,52 @@
   box-sizing: border-box;
 }
 
-@media (max-width: 800px) {
-  .photo {
-    width: 85%;
-  }
-
-  .repos {
-    padding-left: 1%;
-  }
-}
-
-@media (max-width: 700px) {
+@media (max-width: 990px) {
   .profile-container {
     flex-direction: column;
   }
 
+  .picture-and-name {
+    width: 100%;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .photo {
+    width: 35%;
+  }
+
+  .toMove {
+    width: 65%;
+    padding-left: 5%;
+  }
+
   .repos {
-    margin-top: 4%;
+    margin-top: 10%;
+    padding: 0% 5% 0% 5%;
+  }
+}
+
+@media (max-width: 590px) {
+  .picture-and-name {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .repos {
+    margin-top: 6%;
+  }
+
+  .names {
+    row-gap: 10px;
+    margin-top: 5%;
+  }
+
+  .toMove {
+    width: 100%;
+  }
+
+  .photo {
+    width: 38%;
   }
 }

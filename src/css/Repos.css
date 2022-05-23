@@ -16,7 +16,7 @@ h1 {
 
 .repo {
   height: auto;
-  padding: 4% 1% 4% 5%;
+  padding: 3% 1% 3% 5%;
   background-color: #ffffff;
   border-radius: 6px;
   display: flex;
@@ -81,18 +81,9 @@ h1 {
   color: #ffffff;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 990px) {
   .listOfRepos {
-    row-gap: 5vw;
-  }
-
-  .repo {
-    padding-left: 20px;
-  }
-
-  .repo a {
-    font-size: 20px;
-    margin-bottom: 8%;
+    row-gap: 4vw;
   }
 
   .pagination {
@@ -102,5 +93,40 @@ h1 {
   .pagination ul {
     justify-content: center;
     padding-left: 0%;
+  }
+  
+}
+
+@media (max-width: 590px) {
+  .listOfRepos {
+    row-gap: 5vw;
+  }
+
+  .listOfRepos h1 {
+    font-size: 1.6rem;
+  }
+
+  .repo {
+    padding-left: 20px;
+    padding: 4% 5% 4% 5%;
+  }
+
+  .repo a {
+    font-size: 20px;
+    margin-bottom: 8%;
+  }
+
+  .pagination {
+    margin-top: 6%;
+  }
+}
+
+@media (max-width: 590px) {
+  .repo {
+    padding: 6% 5% 6% 5%;
+  }
+
+  .pagination {
+    margin-top: 8%;
   }
 }

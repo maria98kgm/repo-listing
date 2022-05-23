@@ -20,18 +20,20 @@ const Profile = ({ profData, repos }) => {
         <div className='photo'>
           <img src={profData.avatar_url} alt="avatar" />
         </div>
-        <div className='names'>
-          <h2>{profData.name}</h2>
-          <a href={profData.html_url} target="_blank" rel="noreferrer"><p className='login'>{profData.login}</p></a>
-        </div>
-        <div className='fans'>
-          <div className='followers'>
-            <img src={require('../images/followers.png')} alt="followers" />
-            <p>{addPrefix(profData.followers)} followers</p>
+        <div className='toMove'>
+          <div className='names'>
+            <h2>{profData.name}</h2>
+            <a href={profData.html_url} target="_blank" rel="noreferrer"><p className='login'>{profData.login}</p></a>
           </div>
-          <div className='following'>
-            <img src={require('../images/following.png')} alt="following" />
-            <p>{addPrefix(profData.following)} following</p>
+          <div className='fans'>
+            <div className='followers'>
+              <img src={require('../images/followers.png')} alt="followers" />
+              <p>{addPrefix(profData.followers)} followers</p>
+            </div>
+            <div className='following'>
+              <img src={require('../images/following.png')} alt="following" />
+              <p>{addPrefix(profData.following)} following</p>
+            </div>
           </div>
         </div>
       </div>
