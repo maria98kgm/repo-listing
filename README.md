@@ -4,7 +4,9 @@ Deploy: https://dashing-trifle-b96f08.netlify.app/
 
 Repo: https://github.com/maria98kgm/repo-listing/tree/github-repos-listing
 
-Mobile version: `width <= 700px`
+Tablet version: `width <= 990px`
+
+Mobile version: `width <= 590px`
 
 # Getting Started with Create React App
 
