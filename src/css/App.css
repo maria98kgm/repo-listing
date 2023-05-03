@@ -1,0 +1,69 @@
+body, html, #root {
+  margin: 0%;
+  height: 100%;
+  font-family: 'Inter', sans-serif;
+  background: #F9F9F9;
+}
+
+.page-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #0064EB;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  height: 12%;
+  column-gap: 3%;
+  padding-left: 2%;
+}
+
+header input {
+  height: 35px;
+  width: 35vw;
+  border: none;
+  border-radius: 6px;
+  background: url('../images/small-loupe.png') no-repeat scroll 13px 11px;
+  background-color: aliceblue;
+  padding-left: 39px;
+  outline: none;
+  font-size: 14px;
+}
+
+header input:focus {
+  border: 2px solid rgb(224, 4, 224);
+}
+
+.info-container {
+  height: 100%;
+}
+
+.for-loader {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 6vw;
+  height: 6vw;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 600px) {
+  header input {
+    width: 60vw;
+  }
+}

@@ -1,0 +1,112 @@
+.profile-container {
+  display: flex;
+  padding: 3% 5%;
+}
+
+.picture-and-name {
+  width: 35%;
+  min-width: 290px;
+  display: flex;
+  flex-direction: column;
+}
+
+.photo {
+  width: 100%;
+}
+
+.photo img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.names {
+  margin-top: 12%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 20px;
+}
+
+.names h2, .names p {
+  margin: 0px;
+}
+
+.names p {
+  font-size: 16px;
+}
+
+.names h2 {
+  font-size: 26px;
+}
+
+.names a {
+  color: #0064EB;
+  text-decoration: none;
+}
+
+.fans {
+  min-height: 60px;
+  margin-top: 1vw;
+  display: flex;
+  column-gap: 5%;
+}
+
+.followers, .following {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  column-gap: 5%;
+}
+
+.repos {
+  width: 100%;
+  padding-left: 100px;
+  padding-left: 8%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 990px) {
+  .profile-container {
+    flex-direction: column;
+  }
+
+  .picture-and-name {
+    width: 100%;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+
+  .photo {
+    width: 35%;
+  }
+
+  .toMove {
+    width: 65%;
+    padding-left: 5%;
+  }
+
+  .repos {
+    margin-top: 6%;
+    padding: 0% 5% 0% 5%;
+  }
+}
+
+@media (max-width: 590px) {
+  .picture-and-name {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .names {
+    row-gap: 10px;
+    margin-top: 5%;
+  }
+
+  .toMove {
+    width: 100%;
+  }
+
+  .photo {
+    width: 38%;
+  }
+}
